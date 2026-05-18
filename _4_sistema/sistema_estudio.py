@@ -1,13 +1,13 @@
 from datetime import datetime, timedelta
-from modelo.usuario import Usuario
-from modelo.materia import Materia
-from modelo.actividad import ActividadEstudio
-from inteligencia.estadisticas import Estadisticas
-from inteligencia.control_objetivos import ControlObjetivos
-from inteligencia.recomendaciones import Recomendaciones
-from inteligencia.analizador_semanal import AnalizadorSemanal
-from inteligencia.gestor_alertas import GestorAlertas
-from excepciones.errores import *
+from _2_modelo.usuario import Usuario
+from _2_modelo.materia import Materia
+from _2_modelo.actividad import ActividadEstudio
+from _3_inteligencia.estadisticas import Estadisticas
+from _3_inteligencia.control_objetivos import ControlObjetivos
+from _3_inteligencia.recomendaciones import Recomendaciones
+from _3_inteligencia.analizador_semanal import AnalizadorSemanal
+from _3_inteligencia.gestor_alertas import GestorAlertas
+from _1_excepciones.errores import *
 
 class SistemaEstudio:
     def __init__(self):
@@ -75,4 +75,3 @@ class SistemaEstudio:
         acts = u.obtener_actividades()
         dias = (datetime.now() - acts[-1].fecha).days if acts else None
         return GestorAlertas.generar(tiempos, u.metas, dias)
-
