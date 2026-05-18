@@ -1,5 +1,5 @@
-from sistema.sistema_estudio import SistemaEstudio
-from interfaz.dashboard import Dashboard
+from _4_sistema.sistema_estudio import SistemaEstudio
+from _5_interfaz.dashboard import Dashboard
 
 def main():
     sistema = SistemaEstudio()
